@@ -9,14 +9,14 @@ class IconGrid:
     def __init__(self, tk):
         self.tk = tk
     def new(self, type, name):
-        canva = Canvas(self.tk, width = 50)
+        canva = Canvas(self.tk, width = 50, bg = '#212121')
         if (type == 0):
             fileName = "./file.png"
-        else:
+        elif (type == 1):
             fileName = "./folder.png"
         img = Image.open(fileName)
-        image = ImageTk.PhotoImage(img)
-        btn = Button(canva, image = image)
+        imaged = ImageTk.PhotoImage(img)
+        btn = Button(canva, image = imaged)
         btn.grid()
         text = Label(canva, text = name)
         text.grid(row = 1)
